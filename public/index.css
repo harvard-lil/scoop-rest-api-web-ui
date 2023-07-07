@@ -1,17 +1,134 @@
 * {
-  box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  font-family: Garamond, serif;
+  color: var(--main-color);
 }
 
 :root {
-  --primary-color: darkslateblue;
+  --main-color: rgb(29, 29, 29);
+  --main-color-: rgb(57, 57, 57);
+  --main-color--: rgb(70, 70, 70);
+  --main-color---: rgb(100, 100, 100);
+  --main-color----: rgb(125, 125, 125);
+  --main-color-----: rgb(150, 150, 150);
+  
+  --opposite-color: rgb(245, 245, 245);
+  --opposite-color-: rgb(225, 225, 225);
+  --opposite-color--: rgb(205, 205, 205);
+
+  --special-color: rgb(2, 56, 17);
+  --special-color-: rgb(2, 43, 13);
 }
 
 html {
-  font-size: clamp(18px, 1.40vmax, 24px);
-  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 20px;
+  font-size: clamp(18px, 1.35vmax, 32px);
 }
 
 body {
+  font-size: 1rem;
+
+  background-color: var(--opposite-color);
+  color: var(--main-color);
+
+  padding: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  color: var(--special-color);
+}
+
+a:hover {
+  color: var(--special-color-);
+  text-decoration: none;
+}
+
+button {
+  border: 0px;
+  font-size: 0.85rem;
+  background-color: var(--main-color);
+  color: var(--opposite-color);
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.35s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--main-color-);
+}
+
+button[disabled] {
+  background-color: var(--main-color---);
+  cursor: not-allowed;
+}
+
+body > main {
+  max-width: 50ch;
+  padding: 3ch;
+  padding-top: 6ch;
+  margin: auto;
+  text-align: center;
+}
+
+@media (max-width: 769px) {
+  body > main {
+    max-width: 100%;
+  }  
+}
+
+body > main h1 {
+  font-weight: normal;
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+article {
+  margin-top: 1rem;
+}
+
+article h2 {
+  text-align: left;
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+article p {
+  text-align: left;
+  line-height: 1.45rem;
+}
+
+article form {
+
+}
+
+article form label {
+  display: none;
+}
+
+article form input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 1px solid var(--main-color----);
+  padding: 0.65rem;
+  font-size: 0.85rem;
+}
+
+article form input ::placeholder {
+  color: var(--main-color--);
+}
+
+article progress {
+  width: 100%;
 }

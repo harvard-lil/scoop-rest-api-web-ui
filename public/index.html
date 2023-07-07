@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>🍨 Testing out the Scoop REST API.</title>
-    <meta name="description" content="" />
+    <title>Have a Scoop ...</title>
+    <meta name="description" content="A simplistic web UI to interact with the Scoop REST API." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍨</text></svg>">
 
     <meta name="robots" content="noindex,nofollow" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/index.css" />
 
     <script type="module" src="index.js"></script>
   </head>
@@ -17,7 +18,28 @@
   <body>
     
     <main>
-      <h1>Test</h1>
+      <h1 aria-label="Scoop REST API test page">🍨</h1>
+
+      <article id="request">
+        <h2>Have a Scoop ...</h2>
+
+        <p>This form lets you request the capture of a web page using the latest version of the <a href="https://github.com/harvard-lil/scoop-rest-api">Scoop REST API</a>, which we are currently testing internally.</p>
+
+        <form>
+          <label for="url">URL</label>
+          <input type="url" id="url" name="url" placeholder="URL to capture" required>
+
+          <label for="pin">PIN</label>
+          <input type="password" id="pin" name="pin" placeholder="Access PIN" required>
+
+          <button type="submit">Capture</button>
+        </form>
+
+        <progress aria-hidden="true" class="hidden"></progress>
+      </article>
+
+      <article id="response-success" class="hidden"></article>
+      <article id="response-failure" class="hidden"></article>
     </main>
 
   </body>
