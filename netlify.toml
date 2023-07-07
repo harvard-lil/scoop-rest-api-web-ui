@@ -1,3 +1,11 @@
 [build]
   publish = "public/"
   environment = { NODE_VERSION = "18." }
+
+[functions]
+  directory = "functions"
+
+[[redirects]]
+  from='/functions/*'
+  to='/.netlify/functions/:splat'
+  status=200
