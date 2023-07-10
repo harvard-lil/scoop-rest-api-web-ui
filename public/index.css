@@ -92,30 +92,33 @@ body > main h1 {
   font-size: 3.5rem;
 }
 
-article {
+/**
+ * Main form
+ */
+main > section {
   margin-top: 1rem;
 }
 
-article h2 {
+main > section h2 {
   text-align: left;
   font-weight: normal;
   font-size: 2rem;
 }
 
-article p {
+main > section p {
   text-align: left;
   line-height: 1.45rem;
 }
 
-article form {
+main > section form {
 
 }
 
-article form label {
+main > section form label {
   display: none;
 }
 
-article form input {
+main > section form input {
   display: block;
   width: 100%;
   background-color: transparent;
@@ -125,10 +128,10 @@ article form input {
   font-size: 0.85rem;
 }
 
-article form input ::placeholder {
+main > section form input ::placeholder {
   color: var(--main-color--);
 }
 
-article progress {
+main > section progress {
   width: 100%;
 }
