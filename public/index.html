@@ -38,8 +38,35 @@
         <progress aria-hidden="true" class="hidden"></progress>
       </section>
 
-      <dialog id="response-success"></dialog>
-      <dialog id="response-failure"></dialog>
+      <dialog id="response-success">
+        <h2>Capture summary</h2>
+
+        <p>It took <span data-id="capture-time">X</span> seconds to capture <a href="" target="_blank" data-id="capture-url">the URL you submitted</a>.</p>
+
+        <p>You can <a href="" target="_blank" data-id="playback-url">preview the capture on replayweb.page</a> or <a href="" target="_blank" data-id="wacz-url">download the .wacz file</a>.</p>
+
+        <p>You may also want to <a href="" target="_blank" data-id="screenshot-url">have a look at the screenshot</a>.</p>
+
+        <hr>
+
+        <h3>Raw capture data</h3>
+        <textarea disabled></textarea>
+
+        <hr>
+
+        <form method="dialog"><button>Close</button></form>
+      </dialog>
+
+      <dialog id="response-failed">
+        <h2>Something went wrong ...</h2>
+
+        <p>
+          Sorry, we could not capture the url you submitted.<br>
+          Please try again, and let us know on Slack if the problem persists.
+        </p>
+
+        <form method="dialog"><button>Close</button></form>
+      </dialog>
     </main>
 
   </body>

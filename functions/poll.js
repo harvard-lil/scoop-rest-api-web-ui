@@ -7,9 +7,8 @@
  * - "pin"
  * 
  * Status codes:
- * - 400: Missing request body or properties in request body.
+ * - 400: Missing request body / properties in request body, or invalid id_capture.
  * - 401: Wrong / invalid pin
- * - 400: Invalid id_capture
  * - 500: Error enquiring about capture or app misconfiguration
  */
 exports.handler = async function (event, context) {
