@@ -1,4 +1,3 @@
-
 /**
  * Request a capture
  */
@@ -107,12 +106,16 @@ document.querySelector("section#request form").addEventListener("submit", async 
     successDialog.showModal()
 
   } 
-  // On error: open error dialog and re-throw error
+  //
+  // On error: open error dialog and hoist exception
+  //
   catch (err) {
     failedDialog.showModal()
     throw err
   } 
+  //
   // In any case: re-activate form
+  //
   finally {
     urlInput.removeAttribute('disabled')
     pinInput.removeAttribute('disabled')
