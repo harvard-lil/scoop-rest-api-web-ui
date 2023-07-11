@@ -62,7 +62,7 @@ exports.handler = async function (event, context) {
   }
 
   //
-  // Proxy request
+  // Proxy request to Scoop REST API
   //
   try {
     const response = await fetch(`${process.env.SCOOP_REST_API_URL}/capture`, {
@@ -91,7 +91,9 @@ exports.handler = async function (event, context) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(await response.json()),
     }
-  } catch (err) {
+  } 
+  // Catch-all
+  catch (err) {
     console.trace(err)
   
     return {
