@@ -95,12 +95,12 @@ document.querySelector("section#request form").addEventListener("submit", async 
     // Populate and open summary dialog
     console.log(capture)
     const captureTime = ((new Date(capture?.ended_timestamp) - new Date(capture?.started_timestamp)) / 1000).toFixed(2)
-    const waczUrl = capture?.artifacts.find(url => url.endsWith('.wacz'))
+    const archiveUrl = capture?.artifacts.find(url => url.endsWith('.warc.gz'))
     const screenshotUrl = capture?.artifacts.find(url => url.endsWith('.png'))
     successDialog.querySelector("*[data-id='capture-time']").innerHTML = `${captureTime}`
     successDialog.querySelector("*[data-id='capture-url']").setAttribute('href', capture?.url)
     successDialog.querySelector("*[data-id='playback-url']").setAttribute('href', capture?.temporary_playback_url)
-    successDialog.querySelector("*[data-id='wacz-url']").setAttribute('href', waczUrl)
+    successDialog.querySelector("*[data-id='archive-url']").setAttribute('href', archiveUrl)
     successDialog.querySelector("*[data-id='screenshot-url']").setAttribute('href', screenshotUrl)
     successDialog.querySelector("textarea").value = JSON.stringify(capture, null, 2)
     successDialog.showModal()
